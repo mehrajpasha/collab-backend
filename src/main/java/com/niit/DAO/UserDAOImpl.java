@@ -21,7 +21,7 @@ import com.niit.model.User;
 	   @Autowired
 	   UserDAO userDAO;
 		
-		
+		@Autowired
 		public UserDAOImpl(SessionFactory sessionFactory){
 			this.sessionFactory = sessionFactory;
 		}
@@ -70,8 +70,16 @@ import com.niit.model.User;
 		public User userbyid(int id) {
 			String hql="from User where userid="+id;
 			Query query= sessionFactory.getCurrentSession().createQuery(hql);
-			User listuser=(User) query.uniqueResult();
-			return listuser;
+			List<User>list= query.list();
+			
+			if(list==null)
+			{
+				return null;
+			}
+			else
+			{
+				return list.get(0);
+			}
 		}
 
 		@SuppressWarnings({ "rawtypes", "deprecation", "unchecked" })
@@ -90,5 +98,21 @@ import com.niit.model.User;
 			}
 		}
 		
+		@Transactional
+		public User profileof(String username) {
+			String hql="from User where username='"+username+"'";
+			Query query=sessionFactory.getCurrentSession().createQuery(hql);
+			List<User>list= query.list();
+			
+			if(list==null)
+			{
+				return null;
+			}
+			else
+			{
+				return list.get(0);
+			}
 		
+		
+		}
 	}

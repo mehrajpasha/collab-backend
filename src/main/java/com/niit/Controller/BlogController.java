@@ -20,13 +20,13 @@ import com.niit.model.Blog;
 @RestController
 public class BlogController {
     
-	@Autowired
+	
 	private BlogDAO blogDAO;
 	
 	@PostMapping("/pattern")
 	public ResponseEntity<Blog> postblog(@RequestBody Blog blog,HttpSession session)
 	{
-		blog.setB_userid((int) session.getAttribute("uid"));
+		
 		System.out.println(blog.getBlogdescription());
 		blogDAO.saveOrUpdate(blog);
 		return new ResponseEntity<Blog>(blog,HttpStatus.OK);

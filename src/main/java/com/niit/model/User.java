@@ -16,7 +16,10 @@ public class User {
 	private int mobile;
 	private String address;
 	private String role;
-	private String status;
+	private char status;
+	private String loginstatus;
+	private String dob;
+	private byte[] image;
 	public int getUserid(){
 		return userid;
 	}
@@ -53,11 +56,29 @@ public class User {
 	public void setRole(String role) {
 		this.role = role;
 	}
-	public String getStatus() {
+	public char getStatus() {
 		return status;
 	}
-	public void setStatus(String status) {
+	public void setStatus(char status) {
 		this.status = status;
+	}
+	public String getLoginstatus() {
+		return loginstatus;
+	}
+	public void setLoginstatus(String loginstatus) {
+		this.loginstatus = loginstatus;
+	}
+	public String getDob() {
+		return dob;
+	}
+	public void setDob(String dob) {
+		this.dob = dob;
+	}
+	public byte[] getImage() {
+		return image;
+	}
+	public void setImage(byte[] image) {
+		this.image = image;
 	}
 	
 }

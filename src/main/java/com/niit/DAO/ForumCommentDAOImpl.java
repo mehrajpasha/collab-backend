@@ -17,6 +17,8 @@ public class ForumCommentDAOImpl implements ForumCommentDAO {
 
 	@Autowired
 	private SessionFactory sessionFactory;
+	
+	@Autowired
 	public ForumCommentDAOImpl(SessionFactory sessionFactory) {
 		this.sessionFactory=sessionFactory;
 	}

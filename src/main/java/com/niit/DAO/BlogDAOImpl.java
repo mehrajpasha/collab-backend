@@ -17,11 +17,8 @@ import com.niit.model.Blog;
 		
 		@Autowired
 		private SessionFactory sessionFactory;
-		
+	    
 		@Autowired
-		private BlogDAO blogDAO;
-		
-		
 		public BlogDAOImpl(SessionFactory sessionFactory){
 			this.sessionFactory = sessionFactory;
 		}
@@ -60,7 +57,7 @@ import com.niit.model.Blog;
 		@Transactional
 		public String  getallBlogs() 
 		{
-			List<Blog> list=blogDAO.getBlogs();
+			List<Blog> list=sessionFactory.getCurrentSession().createCriteria(Blog.class).list();
 			Gson gson=new Gson();
 			String data=gson.toJson(list);
 			return data;

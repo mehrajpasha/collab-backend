@@ -13,4 +13,5 @@ public interface UserDAO {
 	public String  getallUsers();
 	public User userbyid(int fid);
 	public User authuser(String username, String password);
+	public User profileof(String username);
 }

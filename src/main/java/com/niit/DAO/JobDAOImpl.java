@@ -15,6 +15,8 @@ public class JobDAOImpl implements JobDAO {
 
 	@Autowired
 	private SessionFactory sessionFactory;
+	
+	@Autowired
 	public JobDAOImpl(SessionFactory sessionFactory) {
 		this.sessionFactory=sessionFactory;
 	}

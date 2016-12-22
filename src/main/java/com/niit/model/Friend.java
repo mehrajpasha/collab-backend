@@ -18,7 +18,8 @@ public class Friend {
 	private int id;
 	private String userid;
 	private String friendid;
-	private char status;   //n-newly sent, a-approved, r-rejected, u-unfriend
+	private char status; 
+	private char isonline;//n-newly sent, a-approved, r-rejected, u-unfriend
 	
 	public int getId() {
 		return id;
@@ -43,6 +44,12 @@ public class Friend {
 	}
 	public void setStatus(char status) {
 		this.status = status;
+	}
+	public char getIsonline() {
+		return isonline;
+	}
+	public void setIsonline(char isonline) {
+		this.isonline = isonline;
 	}
 	
 }
